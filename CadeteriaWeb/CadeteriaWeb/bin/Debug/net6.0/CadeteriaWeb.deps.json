@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CadeteriaWeb/1.0.0": {
+        "runtime": {
+          "CadeteriaWeb.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CadeteriaWeb/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
