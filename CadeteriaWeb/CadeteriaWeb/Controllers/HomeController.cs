@@ -26,22 +26,7 @@ namespace CadeteriaWeb.Controllers
             return View(modelo);
         }
 
-        [HttpGet]
-        public IActionResult Cliente()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Cliente(ClienteDTO clienteDTO)
-        {
-            repositorioCliente.RegistrarClientes(clienteDTO);
-            return RedirectToAction("Gracias");
-        }
-
-        public IActionResult Gracias()
-        {
-            return View();
-        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
