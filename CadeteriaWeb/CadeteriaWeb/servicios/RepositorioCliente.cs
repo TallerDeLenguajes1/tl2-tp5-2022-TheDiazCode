@@ -1,29 +1,44 @@
 ﻿using CadeteriaWeb.Models;
+using System.Data.SqlClient;
+
 namespace CadeteriaWeb.servicios
 {
     public interface IRepositorioCliente
     {
-        List<ClienteDTO> ObtenerClientes();
-        List<ClienteDTO> RegistrarClientes(ClienteDTO cliente);
+        void RegistrarCliente(ClienteDTO cliente);
     }
     public class RepositorioCliente:IRepositorioCliente
     {
-        private List<ClienteDTO> lista = new List<ClienteDTO>();
+        private readonly string connectionString;
 
-        public List<ClienteDTO> RegistrarClientes(ClienteDTO cliente)
+        public RepositorioCliente(IConfiguration configuration)
         {
-           lista.Add(cliente);
-           return lista;
+            connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-        public List<ClienteDTO> ObtenerClientes()
+        public void RegistrarCliente(ClienteDTO clienteDTO)
         {
-            return lista;
+            string query = "insert into Cliente(nombre,apellido,direccion,telefono) values (@nombre,@apellido,@direccion,@telefono)";
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, sqlConnection);
+                command.Parameters.AddWithValue("@nombre", clienteDTO.nombre);
+                command.Parameters.AddWithValue("@apellido", clienteDTO.apellido);
+                command.Parameters.AddWithValue("@telefono", clienteDTO.telefono);
+                command.Parameters.AddWithValue("@direccion", clienteDTO.direccion);
+                try
+                {
+                    sqlConnection.Open();
+                    command.ExecuteNonQuery();
+                    sqlConnection.Close();
+                }
+                catch (Exception exe)
+                {
+                    Console.WriteLine(exe.Message);
+                    throw;
+                }
+            }
+
         }
-
-
-
-
     }
-
-  
 }

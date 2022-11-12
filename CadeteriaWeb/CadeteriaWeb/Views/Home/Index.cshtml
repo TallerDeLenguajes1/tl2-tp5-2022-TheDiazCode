@@ -2,16 +2,3 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    @foreach (var item in Model.ClienteDTOs)
-    {
-        <ul>
-            <li>Id: @item.Id</li>
-            <li>Nombre: @item.nombre</li>
-            <li>Telefono: @item.telefono</li>
-            <li>Direccion: @item.direccion</li>
-            <li>Detalles: @item.detalles</li>
-        </ul>
-    }
-</div>

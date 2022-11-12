@@ -28,11 +28,11 @@ namespace CadeteriaWeb.Controllers
         [HttpPost]
         public IActionResult Cliente(ClienteDTO clienteDTO)
         {
-            repositorioCliente.RegistrarClientes(clienteDTO);
-            return RedirectToAction("Gracias");
+            repositorioCliente.RegistrarCliente(clienteDTO);
+            return RedirectToAction("_Gracias");
         }
 
-        public IActionResult Gracias()
+        public IActionResult _Gracias()
         {
             return View();
         }

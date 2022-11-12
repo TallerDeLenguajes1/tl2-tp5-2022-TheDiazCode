@@ -4,8 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IRepositorioCliente, RepositorioCliente>();
-
+builder.Services.AddTransient<IRepositorioCliente, RepositorioCliente>();//transient porque nuestro repo no va a compartir clientes
+builder.Services.AddTransient<IRepositorioCadete, RepositorioCadete>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

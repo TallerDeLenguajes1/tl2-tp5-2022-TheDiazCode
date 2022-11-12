@@ -18,12 +18,8 @@ namespace CadeteriaWeb.Controllers
 
         public IActionResult Index()
         {
-            var clientes = repositorioCliente.ObtenerClientes();
-            var modelo = new HomeIndexViewModel
-            {
-                ClienteDTOs = clientes
-            };
-            return View(modelo);
+            
+            return View();
         }
 
         
