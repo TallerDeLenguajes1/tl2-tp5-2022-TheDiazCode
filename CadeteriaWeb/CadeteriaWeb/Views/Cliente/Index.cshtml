@@ -1,0 +1,40 @@
+﻿@model HomeIndexViewModel
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<div class="card">
+    <div class="card-header">
+        Lista de Clientes
+    </div>
+    <div class="card-body">
+        <a type="submit" class="btn btn-primary" asp-action="Crear" asp-controller="Cliente" ><i class="bi bi-plus-circle"></i>Crear Cliente</a>
+        <hr />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>apellido</th>
+                    <th>nombre</th>
+                    <th>direccion</th>
+                    <th>telefono</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model.ClienteDTOs)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.apellido</td>
+                        <td>@item.nombre</td>
+                        <td>@item.direccion</td>
+                        <td>@item.telefono</td>
+                        <td><a asp-action="Editar" asp-controller="Cliente" class="btn btn-primary btn-sm" asp-route-idCliente = "@item.Id">Editar</a></td>
+                        <td><a asp-action="Eliminar" asp-controller="Cliente" class="btn btn-primary btn-sm" asp-route-idCliente = "@item.Id">Eliminar</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
