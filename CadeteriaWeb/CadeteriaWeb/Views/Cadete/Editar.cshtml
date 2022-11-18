@@ -1,0 +1,35 @@
+﻿@model CadeteDTO
+@{
+    ViewData["title"] = "Editar";
+}
+<h1>Editar Cadete</h1>
+
+<form asp-controller="Cadete" asp-action="Editar" method="post">
+    <input asp-for="Id" type="hidden" class="form-control" >
+    <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input asp-for="nombre" type="text" class="form-control" placeholder="Ej. Clark">
+        <span asp-validation-for="nombre" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="apellido" class="form-label">apellido</label>
+        <input asp-for="apellido" type="text" class="form-control" placeholder="Ej. Kent">
+        <span asp-validation-for="apellido" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="telefono" class="form-label">telefono</label>
+        <input asp-for="telefono" type="text" class="form-control" placeholder="381 123 45 67">
+        <span asp-validation-for="telefono" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="direccion" class="form-label">Domicilio</label>
+        <input asp-for="direccion" type="text" class="form-control" placeholder="Av. Roca 628">
+        <span asp-validation-for="direccion" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Registrar</button>
+    <a asp-action="Index" asp-controller="Cadete" class="btn btn-warning">volver a lista</a>
+</form>

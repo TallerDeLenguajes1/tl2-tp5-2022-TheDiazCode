@@ -6,31 +6,76 @@ namespace CadeteriaWeb.Controllers
 {
     public class CadeteController : Controller
     {
+        private readonly ILogger<CadeteController> _logger;
         private readonly IRepositorioCadete repositorioCadete;
 
-        public CadeteController(IRepositorioCadete repositorioCadete)
+        public CadeteController(ILogger<CadeteController> logger, IRepositorioCadete repositorioCadete)
         {
+            _logger = logger;
             this.repositorioCadete = repositorioCadete;
         }
         public IActionResult Index()
         {
-            return View();
+            List<CadeteDTO> cadetes = repositorioCadete.listar();
+            var modelo = new HomeIndexViewModel()
+            {
+                CadeteDTOs = cadetes
+            };
+            return View(modelo);
         }
         [HttpGet]
-        public IActionResult Cadete()
+        public IActionResult Crear()
         {
-            
             return View();
         }
         [HttpPost]
-        public IActionResult Cadete(CadeteDTO cadeteDTO)
+        public IActionResult Crear(CadeteDTO cadeteDTO)
         {
             repositorioCadete.RegistrarCadete(cadeteDTO);
-            return RedirectToAction("_Gracias");
+            return RedirectToAction("Index");
         }
-        public IActionResult _Gracias()
+
+        public IActionResult Editar(int idCadete)
         {
-            return View();
+            var cadete = repositorioCadete.ObtenerId(idCadete);
+            return View(cadete);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(CadeteDTO cadete)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var accion = repositorioCadete.Editar(cadete);
+            if (accion)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+        
+        public IActionResult Eliminar(int idCadete)
+        {
+            var cadete = repositorioCadete.ObtenerId(idCadete);
+            return View(cadete);
+        }
+        [HttpPost]
+        public IActionResult Eliminar(CadeteDTO cadete)
+        {
+            var accion = repositorioCadete.Eliminar(cadete.Id);
+            if (accion)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

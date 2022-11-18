@@ -15,8 +15,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Usuario\OneDrive\Escritorio\PROYECTOS\taller\cadeteria\CadeteriaWeb\CadeteriaWeb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Usuario/OneDrive/Escritorio/PROYECTOS/taller/cadeteria/CadeteriaWeb/CadeteriaWeb/Views/Cadetes/Cadete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkZXRlc1xDYWRldGUuY3NodG1s
+[C:/Users/Usuario/OneDrive/Escritorio/PROYECTOS/taller/cadeteria/CadeteriaWeb/CadeteriaWeb/Views/Cadete/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkZXRlXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Escritorio/PROYECTOS/taller/cadeteria/CadeteriaWeb/CadeteriaWeb/Views/Cadete/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkZXRlXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Escritorio/PROYECTOS/taller/cadeteria/CadeteriaWeb/CadeteriaWeb/Views/Cadete/Eliminar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkZXRlXEVsaW1pbmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/OneDrive/Escritorio/PROYECTOS/taller/cadeteria/CadeteriaWeb/CadeteriaWeb/Views/Cadete/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkZXRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Usuario/OneDrive/Escritorio/PROYECTOS/taller/cadeteria/CadeteriaWeb/CadeteriaWeb/Views/Cliente/Crear.cshtml]

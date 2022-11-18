@@ -1,0 +1,16 @@
+﻿@model CadeteDTO
+@{
+    ViewData["title"] = "Eliminar";
+}
+<h1>Eliminar Cadete</h1>
+
+<form asp-controller="Cadete" asp-action="Eliminar" method="post">
+    <input asp-for="Id" type="hidden" class="form-control" >
+    
+    <div class="alert alert-danger" role="alert">
+        ¿Desea Borrar el Cadete : @Html.DisplayTextFor(t => t.nombre) ?
+    </div>
+    
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" asp-controller="Cadete" class="btn btn-warning">volver a lista</a>
+</form>

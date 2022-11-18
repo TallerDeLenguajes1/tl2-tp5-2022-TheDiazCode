@@ -87,13 +87,11 @@ namespace CadeteriaWeb.servicios
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-
                         cliente.Id = Convert.ToInt32(reader["id"]);
                         cliente.nombre = reader["nombre"].ToString();
                         cliente.apellido = reader["apellido"].ToString();
                         cliente.direccion = reader["direccion"].ToString();
-                        cliente.telefono = reader["telefono"].ToString();
-                        
+                        cliente.telefono = reader["telefono"].ToString();   
                     }
                 }
                 catch (Exception exe)

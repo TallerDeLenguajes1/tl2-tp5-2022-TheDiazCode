@@ -6,10 +6,10 @@ namespace CadeteriaWeb.Controllers
 {
     public class ClienteController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ClienteController> _logger;
         private readonly IRepositorioCliente repositorioCliente;
 
-        public ClienteController(ILogger<HomeController> logger, IRepositorioCliente repositorioCliente)
+        public ClienteController(ILogger<ClienteController> logger, IRepositorioCliente repositorioCliente)
         {
             _logger = logger;
             this.repositorioCliente = repositorioCliente;
